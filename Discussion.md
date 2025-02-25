@@ -76,29 +76,6 @@ g++ -o extract_logs extract_logs.cpp
    - Run the executable with the required arguments.
    - Extracted logs are saved in the `output/` directory.
 
----
-
-## ✅ Evaluation Criteria
-- **Total Running Time:** Optimized for speed and processing only relevant lines.
-- **Code Quality:** Clear, modular, and includes proper error handling.
-- **Resource Utilization:** Uses minimal memory by reading and writing line by line.
-
----
-
-## 📬 Submission Guidelines
-1. **Fork the Repository:** Fork the provided repository to your own GitHub account.
-2. **Add Your Solution:** Place the working code in the `src/` directory.
-3. **Submit Link:** Share the link to your forked repository via the provided Google form.
-
----
-
-## 🚨 Notes
-- Ensure your code is pushed to the `main` branch.
-- Submissions made after 1 hour from the contest start will be disqualified.
-- You are allowed to use external resources but ensure your solution is original.
-
----
-
 **Developed by:** Ayush Sehgal
 **Date:** 25/2/2025  
 **Contact:** ayushks.cs.21@nitj.ac.in
