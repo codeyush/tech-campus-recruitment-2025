@@ -1,9 +1,9 @@
 
-# Log Extraction Solution (C++) for FarMart Tech Campus Recruitment 2025
+# Log Extraction Solution (C++) – FarMart Tech Campus Recruitment 2025
 
 ## 📄 Problem Statement
 
-The goal of this project is to efficiently extract log entries from a large log file (~1 TB) based on a specific date. Each log entry starts with a timestamp, followed by a log level and a descriptive message.
+This project aims to efficiently extract log entries from a large log file (~1 TB) based on a user-specified date. Each log entry begins with a timestamp, followed by a log level and a descriptive message.
 
 ### Example Log Format:
 ```
@@ -13,69 +13,73 @@ The goal of this project is to efficiently extract log entries from a large log 
 ```
 
 ## 🎯 Objective
-- Extract all log entries for a specific date provided as a command-line argument.
-- Save the extracted logs in an output file inside the `output/` directory.
-- Optimize the solution for speed and efficient memory usage.
 
----
+- Extract all log entries corresponding to a specific date provided as a command-line argument.
+- Save the extracted logs into a separate output file located in the `output/` directory.
+- Optimize the solution for both speed and efficient memory usage.
 
 ## ⚙️ Solution Approach
-- The C++ program reads the file line by line to minimize memory usage.
-- Compares the start of each line with the given date.
-- If a line matches the specified date, it writes the entry to the output file.
-- Automatically creates an `output/` directory if it doesn't exist.
+
+- The program reads the log file **line by line** to minimize memory consumption.
+- Each line is compared against the provided date.
+- If the date matches, the log entry is written directly to an output file.
+- Automatically creates the `output/` directory if it doesn’t already exist, ensuring compatibility with both Windows and Linux systems.
 
 ## 🛠️ How to Run
 
-### **Prerequisites:**
-- A C++ compiler (like `g++` on Linux or `MSVC` on Windows)
+### Prerequisites
+- A C++ compiler (e.g., `g++` on Linux/macOS or `MSVC` on Windows)
 
-### **Compile the Code:**
+### Compilation Command:
 ```bash
-g++ -o extract_logs extract_logs.cpp
+g++ -o extract_logs src/extract_logs.cpp
 ```
 
-### **Execute the Program:**
+### Execution Command:
 ```bash
 ./extract_logs <path_to_log_file> <YYYY-MM-DD>
 ```
 
-**Example:**
+#### Example Usage:
 ```bash
 ./extract_logs logs/large_log.txt 2024-12-01
 ```
 
-### **Expected Output:**
+### Expected Output:
 - A file named `output/output_2024-12-01.txt` containing all log entries for the specified date.
 
----
-
 ## 📑 Project Structure
+
 ```
 ├── src/
 │   └── extract_logs.cpp       # Main C++ script for log extraction
-├── output/                    # Directory for extracted logs
-├── Discussion.md              # Solution explanation and alternatives
+├── output/                    # Directory for storing extracted logs
+├── Discussion.md              # Detailed solution discussion and alternative approaches
 ├── README.md                  # Project documentation (this file)
 ```
 
----
+## 📝 Discussion.md Overview
 
-## 📝 Discussion.md Content
-1. **Solutions Considered:**
-   - **Memory-heavy solution:** Loading the entire log file into memory, which is inefficient for large files.
-   - **Line-by-line processing (final solution):** Efficient memory usage and quicker execution.
+### 🔍 Solutions Considered:
 
-2. **Final Solution Summary:**
-   - Reads the log file line by line.
-   - Writes matching entries directly to an output file.
-   - Handles directory creation for both Windows and Linux environments.
+1. **Memory-intensive approach:**  
+   - Loading the entire log file into memory.  
+   - Discarded due to inefficiency with large files.
 
-3. **Steps to Run:**
-   - Compile the program using a C++ compiler.
-   - Run the executable with the required arguments.
-   - Extracted logs are saved in the `output/` directory.
+2. **Line-by-line processing (Final Solution):**  
+   - Efficient memory usage and faster execution.  
+   - Reads and processes the log file incrementally, avoiding memory bottlenecks.
 
-**Developed by:** Ayush Sehgal
-**Date:** 25/2/2025  
-**Contact:** ayushks.cs.21@nitj.ac.in
+### ✅ Final Solution Highlights:
+- Reads the log file incrementally, processing entries in real-time.
+- Writes matching entries directly to the output file to minimize memory overhead.
+- Automatically handles output directory creation on both Windows and Linux platforms.
+
+### 📋 Execution Steps:
+1. Compile the code using a C++ compiler.
+2. Run the executable with the specified log file path and date.
+3. The output log file will be generated automatically in the `output/` directory.
+
+**👨‍💻 Developed by:** Ayush Sehgal  
+**📅 Date:** February 25, 2025  
+**📧 Contact:** [ayushks.cs.21@nitj.ac.in]
